@@ -1,0 +1,108 @@
+.tokens {
+  .token__table {
+    padding: 100px 0 120px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 630px;
+    position: relative;
+
+    .token {
+      position: relative;
+
+      .title {
+        @include text(dmb, var(--fs-text-info), var(--lh-text-info), var(--ls-text-info), var(--white-cl), uppercase);
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        height: 21%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      &.name {
+        width: 25%;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          p {
+            @include text(dmb, var(--fs-tokens), var(--lh-tokens), none, var(--white-cl), none);
+          }
+
+          span {
+            width: 39px;
+            height: 26px;
+            background-color: var(--blueblack-cl);
+            border-radius: 1000px;
+            padding: 8px 8px 7px 9px;
+            @include text(dmr, var(--fs-tokens-s), var(--lh-tokens-s), normal, var(--white-cl), uppercase)
+          }
+        }
+      }
+
+      &.desc {
+        @include text(dmr, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+        width: 25%;
+      }
+
+      &.market {
+        @include text(dmb, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+        width: 20%;
+      }
+
+      &.volume {
+        @include text(dmb, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+        width: 20%;
+      }
+
+      &.website {
+        width: 10%;
+        @include text(dmr, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+
+        a {
+          text-decoration: underline;
+          color: var(--white-cl);
+        }
+      }
+    }
+  }
+
+  @include sm {
+    padding: 48px 0 0 0;
+    margin: 0;
+
+
+    .textbox {
+      &.center {
+        text-align: initial;
+      }
+    }
+
+    .token__table {
+      padding-top: 80px;
+      display: block;
+
+      .token {
+        .title {
+          padding: 0;
+        }
+
+        .item {
+          margin-bottom: 20px;
+        }
+
+        &.desc {
+          width: 256px;
+        }
+
+        .item:nth-last-child(-n+3) {
+          display: none;
+        }
+      }
+    }
+  }
+}

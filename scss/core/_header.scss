@@ -1,0 +1,242 @@
+.header {
+  &.--bg-header {
+    background-color: var(--blueblack-cl);
+    @include transition(var(--t));
+  }
+
+  width: 100%;
+  height: var(--height-header);
+  color: var(--white-cl);
+  position: relative;
+  position: fixed;
+  z-index: 300;
+
+  .container {
+    height: 100%;
+    @include midbetween();
+    position: relative;
+
+    .logo {
+      @include mid(true);
+      height: 100%;
+      cursor: pointer;
+
+      .hidden {
+        display: none;
+      }
+    }
+
+    .menu {
+      height: 100%;
+      @include midbetween();
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 35%;
+      transform: translateX(-31%);
+
+      li {
+        list-style: none;
+
+        a {
+          padding: 15px;
+          @include text(dmr, var(--fs-text-menu), var(--lh-text-menu), var(--ls-text-menu), var(--white-cl), uppercase);
+          width: fit-content;
+          position: relative;
+          cursor: pointer;
+          display: block;
+          transition: var(--t);
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 15px;
+            transform: translateX(-50%) scaleX(0);
+            height: 1px;
+            width: calc(100% - 33px);
+            @include transition(var(--t) var(--cubic));
+            @include transform-origin(right);
+            @include transform(scaleX(0));
+            background-color: var(--white-cl);
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          &.active,
+          &:hover {
+            &::before {
+              @include transform(scaleX(1));
+              @include transform-origin(left);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+
+    .btnmenu {
+      background-color: var(--blue-cl);
+      border-radius: 100%;
+      width: 45px;
+      height: 45px;
+      padding: 20px 0 0 10px;
+      cursor: pointer;
+      z-index: 300;
+      display: none;
+      transition: var(--t);
+
+      span {
+        width: 25px;
+        height: 2px;
+        background-color: var(--white-cl);
+        position: absolute;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: var(--white-cl);
+        }
+
+        &::before {
+          transform: translateY(-8px);
+        }
+
+        &::after {
+          transform: translateY(8px);
+        }
+      }
+
+      &.open {
+        span {
+          transform: translateX(-50%);
+          background-color: transparent;
+
+          &:before {
+            transform: rotate(45deg) translate(10px, -10px);
+            @include transition(var(--t));
+          }
+
+          &:after {
+            transform: rotate(-45deg) translate(10px, 10px);
+            @include transition(var(--t));
+          }
+        }
+      }
+    }
+
+    .nav {
+      .logo {
+        height: 132px;
+        display: flex;
+        align-items: center;
+        justify-content: left !important;
+        padding: 15px 15px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      background: var(--main-cl);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      opacity: 0;
+      overflow: hidden;
+      visibility: hidden;
+      @include transition(var(--t));
+      @include transform(translateX(-740px));
+
+      ul {
+        li {
+          padding: 17px;
+          text-align: center;
+
+          a {
+            position: relative;
+            @include text(dmb, var(--fs-body-2-m), var(--lh-body-2-m), var(--ls-body-2-m), var(--white-cl), uppercase);
+            @include transition(var(--t));
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 4px;
+              transform: translateX(-50%) scaleX(0);
+              height: 1px;
+              width: 100%;
+              @include transition(var(--t) var(--cubic));
+              @include transform-origin(right);
+              @include transform(scaleX(0));
+              background-color: var(--white-cl);
+              opacity: 0;
+              visibility: hidden;
+            }
+
+            &.active,
+            &:hover {
+              &::before {
+                @include transform(scaleX(1));
+                @include transform-origin(left);
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include sm {
+    .container {
+      .menu {
+        display: none;
+      }
+
+      .btnmain {
+        display: none;
+      }
+
+      .btnmenu {
+        display: block;
+
+        span {
+          display: block;
+        }
+      }
+
+      .nav {
+        &.active {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          @include transform(translateX(0px));
+        }
+
+        .blur {
+          z-index: -1;
+          position: absolute;
+          left: -28.97%;
+          right: -28.97%;
+          top: 5%;
+          bottom: 13.51%;
+          filter: brightness(200%);
+        }
+
+        .btnmain {
+          position: absolute;
+          display: block;
+          left: 23%;
+          transform: translateY(50%);
+          width: max-content;
+        }
+      }
+    }
+  }
+}

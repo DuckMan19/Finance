@@ -1,0 +1,142 @@
+.contact {
+  &__wrap {
+    padding: 52px 0 120px 0;
+    @include grid();
+
+    .contact__form {
+      grid-area: 1/1/2/9;
+
+      .contact__input {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+      }
+    }
+
+    .contact__info {
+      grid-area: 1/9/2/13;
+      padding-left: 35px;
+
+      .textbox {
+        .des {
+          padding: 12px 0 32px 0;
+        }
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .faq {
+    padding-bottom: 120px;
+
+    .textbox {
+      text-align: center;
+      padding-bottom: 80px;
+    }
+
+    &__list {
+      max-width: 872px;
+      margin: 0 auto;
+
+      .faq-item {
+        padding: 32px 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        .accordion {
+          @include text(dmb, var(--fs-number), var(--lh-number), var(--ls-number), var(--white-cl), none);
+          background-color: var(--main-cl);
+          color: var(--white-cl);
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          position: relative;
+          transition: background-color 0.4s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 27px;
+            height: 2px;
+            background-color: var(--white-cl);
+            transition: var(--t);
+          }
+
+          &::before {
+            transform: translate(-50%, -50%);
+          }
+
+          &::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+          }
+
+          &.active {
+            &::after {
+              transform: translate(-50%, -50%) rotate(180deg);
+            }
+          }
+        }
+
+        .panel {
+          padding: 0 18px;
+          background-color: var(--main-cl);
+          display: none;
+          overflow: hidden;
+
+          &.active {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @include sm {
+    .contact__wrap {
+      display: flex;
+      flex-direction: column;
+
+      .contact__form {
+        .contact__input {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .contact__info {
+        .heading {
+          @include text(dmb, var(--fs-h2-m), var(--lh-h2-m), var(--ls-h2-m), var(--white-cl), none)
+        }
+
+        padding-left: 0;
+      }
+    }
+
+    .faq {
+      .textbox {
+        padding-bottom: 32px;
+      }
+
+      .faq-item {
+        .accordion {
+          @include text(dmb, var(--fs-body-1), var(--lh-body-1), var(--ls-body-1), var(--white-cl), none);
+        }
+
+        .panel {
+          @include text(dmr, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+        }
+      }
+    }
+  }
+}

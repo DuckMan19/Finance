@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance</title>
+
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta name="keyword" content="" />
+    <!-- favicon -->
+    <link rel="canonical" href="" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    <!-- meta facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <style>
+      .loading {
+        z-index: 999;
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .loading.--success {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .loading-spinner {
+        max-width: 160px;
+        height: 5px;
+        background-color: var(--blue-cl);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .loading-spinner span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        background-color: var(--white-cl);
+        animation: moveRight 5s infinite;
+      }
+
+      .loading-progress {
+        margin-top: 10px;
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      @keyframes moveRight {
+        from {
+          width: 0%;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="dest/fonts.css" />
+    <link rel="stylesheet" href="dest/style.min.css" />
+  </head>
+
+  <body>
+    <div class="loading">
+      <div class="loading-spinner">
+        <span></span>
+      </div>
+      <div class="loading-progress"></div>
+    </div>
+    <div class="scrollheader"></div>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="./">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="pricing.html">PRICING</a></li>
+          <li><a href="tokens.html">TOKENS</a></li>
+          <li><a href="contactus.html">CONTACT US</a></li>
+        </ul>
+        <div class="btnmenu">
+          <span></span>
+        </div>
+        <a href="./" class="btnmain small">
+          <span>DOWNLOAD APP</span>
+        </a>
+        <!-- mobile -->
+        <nav class="nav">
+          <div class="logo">
+            <a href="./"><img src="./img/logo.svg" alt="iphone" /></a>
+          </div>
+          <div class="blur">
+            <img src="./img/bg.svg" alt="" />
+          </div>
+          <ul class="menunav">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="pricing.html">PRICING</a></li>
+            <li><a href="tokens.html">TOKENS</a></li>
+            <li><a href="#">BLOGS</a></li>
+            <li><a href="contactus.html">CONTACT US</a></li>
+          </ul>
+          <a href="./" class="btnmain">
+            <span>DOWNLOAD APP</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="blur">
+            <img src="./img/bg.svg" alt="" />
+          </div>
+          <div class="textbox">
+            <div class="heading --h1">
+              <h2>Buy, trade, and hold 350+ cryptocurrencies</h2>
+            </div>
+            <div class="des">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aenean dis placerat.
+              </p>
+            </div>
+          </div>
+
+          <div class="group__btn">
+            <a href="#" class="btnmain"> Download App </a>
+            <a href="#" class="btnmain --cl-gray"> Download App </a>
+          </div>
+        </div>
+        <div class="hero_img">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="./img/planet.svg" />
+            <img src="./img/planet-m.svg" alt="" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="crypto">
+        <div class="container">
+          <div class="company__logos">
+            <div class="company__logos-text">
+              <p>Finance flow has been featured on</p>
+            </div>
+            <div class="company__logos-img">
+              <a href="./"><img src="./img/a1-home.svg" alt="" /></a>
+              <a href="./"><img src="./img/a2-home.svg" alt="" /></a>
+              <a href="./"><img src="./img/a3-home.svg" alt="" /></a>
+              <a href="./"><img src="./img/a4-home.svg" alt="" /></a>
+              <a href="./"><img src="./img/a5-home.svg" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="appcrypto">
+        <div class="blur">
+          <img src="./img/bg.svg" alt="" />
+        </div>
+        <div class="container">
+          <div class="app__text">
+            <div class="textbox">
+              <h2 class="heading --h2">Build your crypto portfolio</h2>
+              <div class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </div>
+            </div>
+          </div>
+
+          <div class="app__list">
+            <div class="box">
+              <img src="./img/div1-home.svg" alt="" />
+              <div class="title">Send & Receive</div>
+              <div class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </div>
+            </div>
+
+            <div class="box">
+              <img src="./img/div2-home.svg" alt="" />
+              <div class="title">100% Secure Wallet</div>
+              <div class="des">
+                Lorem ipsum dolor sit amet,consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </div>
+            </div>
+
+            <div class="app">
+              <div class="title">iOS & Android App</div>
+              <div class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                amet, morbi non at sed neque.
+              </div>
+              <div class="app__img">
+                <picture>
+                  <source
+                    media="(min-width:1200px)"
+                    srcset="./img/iPhone14-d.png"
+                  />
+                  <img src="./img/iPhone14-m.png" alt="" />
+                </picture>
+              </div>
+            </div>
+
+            <div class="box">
+              <img src="./img/div3-home.svg" alt="" />
+              <div class="title">Trading Charts</div>
+              <div class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </div>
+            </div>
+
+            <div class="box">
+              <img src="./img/div4-home.svg" alt="" />
+              <div class="title">Real Time Trading</div>
+              <div class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </div>
+            </div>
+          </div>
+          <a href="./" class="btnmain center">
+            <span>DOWNLOAD APP</span>
+          </a>
+        </div>
+      </section>
+      <section class="appiphone">
+        <div class="container">
+          <div class="phone__img">
+            <img src="./img/phone.png" alt="" />
+          </div>
+          <div class="phone__text">
+            <div class="phone__text-content">
+              <div class="textbox">
+                <h2 class="heading --h2">
+                  Earn daily rewards on your idle tokens
+                </h2>
+                <p class="des">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Feugiat nulla suspendisse tortor aene.
+                </p>
+              </div>
+            </div>
+            <div class="phone__text-list">
+              <div class="text_list">
+                <img src="./img/lowest.svg" alt="" />
+                <p>Lowest fees in market</p>
+              </div>
+
+              <div class="text_list">
+                <img src="./img/fast.svg" alt="" />
+                <p>Fast and secure transactions</p>
+              </div>
+
+              <div class="text_list">
+                <img src="./img/secure.svg" alt="" />
+                <p>256-bit secure encryption</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blur">
+          <img src="./img/bg.svg" alt="" />
+        </div>
+      </section>
+      <section class="appcomputer">
+        <div class="container">
+          <div class="thumbnail__2">
+            <div class="textbox">
+              <h2 class="heading --h2">
+                Earn daily rewards on your idle tokens
+              </h2>
+              <p class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </p>
+            </div>
+            <div class="thumbnail__list">
+              <img src="./img/shield.svg" alt="" />
+              <p>100% Private data</p>
+            </div>
+
+            <div class="thumbnail__list">
+              <img src="./img/uptime.svg" alt="" />
+              <p>99.99% Uptime guarantee</p>
+            </div>
+
+            <div class="thumbnail__list">
+              <img src="./img/mess.svg" alt="" />
+              <p>24/7 Dedicated support/p></p>
+            </div>
+          </div>
+
+          <div class="computer__img">
+            <img src="./img/laptop.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="discover">
+        <div class="container">
+          <div class="discover__content">
+            <div class="textbox">
+              <h2 class="heading --h2">
+                Explore endless possibilities with FinanceFlow
+              </h2>
+              <p class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </p>
+            </div>
+            <a href="./" class="btnmain white">
+              <span>DOWNLOAD APP</span>
+            </a>
+          </div>
+          <div class="discover__img">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./img/twophone.png" />
+              <img src="./img/twophone-m.png" alt="" />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <section class="slider">
+        <div class="blur">
+          <img src="./img/bg.svg" alt="" />
+        </div>
+
+        <div class="container">
+          <div class="slider__text">
+            <h2 class="heading --h2">What our users say?</h2>
+            <a href="./" class="btnmain">
+              <span>DOWNLOAD APP</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="item__wrap">
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar1.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="item__list posts">
+            <div class="info_text">
+              <p>
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+                commodo dolor fermentum dignissim et pellentesque egestas
+                mauris, faucibus. Tellus nisi amet non at phasellus faucibus
+                senectus in”
+              </p>
+            </div>
+            <div class="info">
+              <img src="./img/avatar2.svg" alt="" />
+              <div class="name">
+                <span class="title">John carter</span>
+                <span class="review">Role, Company</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="videos">
+        <div class="container">
+          <div class="thumbnail__2">
+            <div class="textbox">
+              <h2 class="heading --h2">Get started today</h2>
+              <p class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </p>
+            </div>
+            <div class="thumbnail__list">
+              <img src="./img/down.svg" alt="" />
+              <span>Download app</span>
+            </div>
+
+            <div class="thumbnail__list">
+              <img src="./img/creat.svg" alt="" />
+              <span>Create a free account</span>
+            </div>
+
+            <div class="thumbnail__list">
+              <img src="./img/start.svg" alt="" />
+              <span>Start trading</span>
+            </div>
+          </div>
+
+          <div class="video__item-img" data-video-src="ZqqraWbJWjA">
+            <picture>
+              <source media="(min-width:1200px)" srcset="./img/video.png" />
+              <img src="./img/video-m.png" alt="" />
+            </picture>
+            <div class="play_button"><img src="./img/play.svg" alt="" /></div>
+          </div>
+        </div>
+      </section>
+      <section class="browse">
+        <div class="container">
+          <div class="browse__text">
+            <div class="textbox between">
+              <h2 class="heading --h2">Browse our latest news</h2>
+              <p class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non
+                neque orci amet, amet .
+              </p>
+            </div>
+          </div>
+          <div class="browse__list">
+            <div class="thumbnail">
+              <div class="item_img">
+                <img src="./img/pc.svg" alt="" />
+              </div>
+              <a href="./" class="btnmain smaller">products</a>
+              <div class="title_content">
+                <div class="textbox">
+                  <div class="heading --h3">
+                    The Basics about Cryptocurrency
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="info">
+                  <img src="./img/avatarman.svg" alt="" />
+                  <div class="name">
+                    <span class="title">Alex Turner</span>
+                    <span class="review">August 2, 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="thumbnail">
+              <div class="item_img">
+                <img src="./img/laptop-color.svg" alt="" />
+              </div>
+              <a href="./" class="btnmain smaller">products</a>
+              <div class="title_content">
+                <div class="textbox">
+                  <div class="heading --h3">
+                    The Basics about Cryptocurrency
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="info">
+                  <img src="./img/avatarman.svg" alt="" />
+                  <div class="name">
+                    <span class="title">Alex Turner</span>
+                    <span class="review">August 2, 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="thumbnail">
+              <div class="item_img">
+                <img src="./img/sky.svg" alt="" />
+              </div>
+              <a href="./" class="btnmain smaller">products</a>
+              <div class="title_content">
+                <div class="textbox">
+                  <div class="heading --h3">
+                    The Basics about Cryptocurrency
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="info">
+                  <img src="./img/avatarman.svg" alt="" />
+                  <div class="name">
+                    <span class="title">Alex Turner</span>
+                    <span class="review">August 2, 2021</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="./" class="btnmain gray">
+            <span>View All Articles</span>
+          </a>
+        </div>
+      </section>
+      <section class="dowloadapp">
+        <div class="container">
+          <div class="textbox between">
+            <h2 class="heading --h2">Download our app</h2>
+            <p class="des">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non
+              neque orci amet, amet .
+            </p>
+          </div>
+          <div class="dowloadapp__list">
+            <div class="item">
+              <div class="textbox">
+                <h2 class="heading --h2">Download for iOS</h2>
+                <p class="des">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris sed nulla integer in pellentesque tortor semper
+                  elementum. Felis.
+                </p>
+              </div>
+              <div class="btnapp">
+                <div class="btnmain small">
+                  <img src="./img/apple.svg" alt="" />
+                  <span>APP STORE</span>
+                </div>
+              </div>
+              <img src="./img/iPhone14.png" alt="" />
+            </div>
+            <div class="item">
+              <div class="textbox">
+                <h2 class="heading --h2">Download for Android</h2>
+                <p class="des">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris sed nulla integer in pellentesque tortor semper
+                  elementum. Felis.
+                </p>
+              </div>
+              <div class="btnapp">
+                <div class="btnmain small">
+                  <img src="./img/flexbox.svg" alt="" />
+                  <span>PLAY STORE</span>
+                </div>
+              </div>
+              <img class="img-icon" src="./img/Android.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="img__logos">
+          <div class="logo">
+            <img src="./img/logo.svg" alt="" />
+          </div>
+          <a href="./" class="img">
+            <i><img src="./img/insta.svg" alt="" /></i>
+            <i><img src="./img/facebook.svg" alt="" /></i>
+            <i><img src="./img/linkedin.svg" alt="" /></i>
+          </a>
+        </div>
+        <div class="menu">
+          <div class="item__menu">
+            <div class="title">Menu</div>
+            <p class="line"></p>
+            <div class="nav-column">
+              <ul class="menunav">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+              </ul>
+            </div>
+
+            <div class="nav-column">
+              <ul class="menunav">
+                <li><a href="#">Tokens</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="down">
+            <div class="textbox">
+              <div class="title">Download our Application</div>
+              <p class="des">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                sed nulla integer
+              </p>
+            </div>
+            <div class="group__btn">
+              <a href="./" class="btnmain small">
+                <img src="./img/apple.svg" alt="" />
+                <span>app store</span>
+              </a>
+              <a href="./" class="btnmain small">
+                <img src="./img/flexbox.svg" alt="" />
+                <span>play store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="name">
+          <p class="line"></p>
+          <span>© 2023 CFD Circle, Inc.</span>
+        </div>
+      </div>
+    </footer>
+    <!-- backtotop -->
+    <div class="back-to-top">
+      <i class="fa-angle-up"></i>
+    </div>
+    <!-- popupvideos -->
+    <!-- popup-video -->
+    <div class="popupvideo">
+      <div class="popupvideo__inner">
+        <div class="popupvideo__inner-iframe">
+          <iframe
+            width="100%"
+            height="100%"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <div class="popupvideo__inner-close">
+            <img src="img/close.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+  </body>
+</html>

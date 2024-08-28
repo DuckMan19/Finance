@@ -1,0 +1,130 @@
+.footer {
+  background-color: var(--blueblack-cl);
+
+  .img__logos {
+    padding-top: 68px;
+    @include midbetween();
+
+    .img {
+      display: flex;
+
+      img {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .menu {
+    @include grid();
+
+    .item__menu {
+      margin-top: 100px;
+      grid-area: 1/1/2/4;
+
+      .title {
+        @include text(dmb, var(--fs-label), var(--lh-label), var(--ls-label), var(--while-color), uppercase);
+      }
+
+      .line {
+        background-color: var(--white-cl);
+        height: 1px;
+        width: 100%;
+        margin-top: 31px;
+        margin-bottom: 31px;
+      }
+
+      .nav-column {
+        float: left;
+        width: 50%;
+
+        .menunav {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 18px
+          }
+
+          a {
+            @include text(dmr, var(--fs-text-menu), var(--lh-text-menu), var(--ls-text-menu), var(--while-color), uppercase);
+          }
+        }
+      }
+    }
+
+    .down {
+      margin-top: 100px;
+      grid-area: 1/8/2/13;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--border);
+      padding: 44px 32px 33px 32px;
+
+      .title {
+        @include text(dmb, var(--fs-label), var(--lh-label), var(--ls-label), var(--while-color), uppercase);
+      }
+
+      .des {
+        margin: 12px 0px 24px 0px;
+      }
+
+      .group__btn {
+        display: flex;
+        gap: 16px;
+
+        .btnmain {
+          gap: 10px;
+        }
+      }
+    }
+
+
+  }
+
+  .name {
+    @include text(dmr, var(--fs-body-2), var(--lh-body-2), var(--ls-body-2), var(--white-cl), none);
+
+    .line {
+      width: 100%;
+      height: 1px;
+      margin: 125px 0 30px 0;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+  }
+
+  @include sm {
+    .img__logos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+
+      .img {
+        gap: 24px;
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .down {
+      .group__btn {
+        display: flex;
+        flex-direction: column;
+
+        .btnmain {
+          max-width: 274px;
+        }
+      }
+    }
+
+    .name {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

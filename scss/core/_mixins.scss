@@ -1,0 +1,290 @@
+//Laptop lớn ,screen <= 1440px(tùy yêu cầu thiết kế)
+@mixin lg {
+  @media screen and (max-width:1440px) {
+    @content;
+  }
+}
+
+//Laptop nhỏ hoặc tablet lớn ,screen < 1200px
+@mixin md {
+  @media screen and (max-width:1199.98px) {
+    @content;
+  }
+}
+
+//Tablets vừa ,screen <= 992px
+@mixin sm {
+  @media screen and (max-width:991.98px) {
+    @content;
+  }
+}
+
+//Tablets nhỏ hoặc Phones quay ngang , screen < 768px
+@mixin xs {
+  @media screen and (max-width:767.98px) {
+    @content;
+  }
+}
+
+//Phone lớn ,screen < 576px
+@mixin xxs {
+  @media screen and (max-width:575.98px) {
+    @content;
+  }
+}
+
+//Phone nhỏ ,screen < 376px (tùy yêu cầu)
+@mixin xxxs {
+  @media screen and (max-width:375.98px) {
+    @content;
+  }
+}
+
+//Landscape
+@mixin landscape {
+  @media screen and (orientation:landscape) {
+    @content;
+  }
+}
+
+//@media max,min
+@mixin maxW($args) {
+  @media (max-width:$args) {
+    @content;
+  }
+}
+
+@mixin minW($args) {
+  @media (min-width:$args) {
+    @content;
+  }
+}
+
+@mixin minH($args) {
+  @media (min-heigth:$args) {
+    @content;
+  }
+}
+
+@mixin maxH($args) {
+  @media (max-heigth:$args) {
+    @content;
+  }
+}
+
+//CSS Animation - Transition
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  animation: #{$str};
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+}
+
+@mixin animation-deplay($str) {
+  animation-delay: #{$str};
+  -webkit-animation-delay: #{$str};
+  -moz-animation-delay: #{$str};
+  -ms-animation-delay: #{$str};
+  -o-animation-delay: #{$str};
+}
+
+@mixin transform($args) {
+  transform: $args;
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+}
+
+@mixin transform-origin($args) {
+  transform-origin: $args;
+  -webkit-transform-origin: $args;
+  -moz-transform-origin: $args;
+  -ms-transform-origin: $args;
+  -o-transform-origin: $args;
+}
+
+@mixin transition($args) {
+  transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+}
+
+@mixin transition-delay($args) {
+  transition-delay: $args;
+  -webkit-transition-delay: $args;
+  -moz-transition-delay: $args;
+  -ms-transition-delay: $args;
+  -o-transition-delay: $args;
+}
+
+//CSS Text
+@mixin text($font-family, $font-size, $line-height, $letter, $color, $text-transform: none) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter;
+  color: $color;
+  text-transform: $text-transform;
+}
+
+//Middle Object
+@mixin mid($flex: flase) {
+  @if $flex ==flase {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    position: absolute;
+  }
+
+  @else {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+//Middle Img
+@mixin midimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  @include mid;
+}
+
+//FullScreen
+@mixin fullscreen($fixed: flase) {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  @if $fixed {
+    position: fixed;
+  }
+
+  @else {
+    position: absolute;
+  }
+}
+
+//Visible
+@mixin visible($param: 1) {
+  @if $param ==1 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @else {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+//Border Radius
+@mixin br($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+//Size Div
+@mixin size($w, $h: $w, $circle: flase) {
+  width: $w;
+  height: $h;
+
+  @if $circle {
+    border-radius: 100%;
+  }
+}
+
+//Overflow Text Dots
+@mixin overtext($lines) {
+  display: -webkit-inline-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+//Customize Scroll Bar
+@mixin customscroll($width: 5px, $bgTrack: #ddd, $bgThumb: #121212) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bgThumb;
+  }
+}
+
+//Custom
+// CUSTOM
+@mixin flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin midbetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin midimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin grid($grid: flase) {
+  @if $grid ==flase {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+  }
+
+  @else {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+//font size
+@mixin body-1-m {
+  font-family: dmr;
+  font-size: var(--fs-body-1-m);
+  line-height: var(--lh-body-1-m);
+  letter-spacing: var(--ls-body-1-m);
+  color: var(--white-cl);
+}
