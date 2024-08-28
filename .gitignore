@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Lock
+*.lock
+
+# IDE settings
+.vscode/
+.idea/
+
+dest/
+sass-cache/
